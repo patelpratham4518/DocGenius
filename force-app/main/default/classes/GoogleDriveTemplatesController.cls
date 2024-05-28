@@ -120,4 +120,17 @@ public with sharing class GoogleDriveTemplatesController {
             return null;
         }
     }
+
+    @AuraEnabled
+    public static string getTemplate(String id){
+        System.debug('Get Template Id ==> '+id);
+        try {
+            Template_Data__c templateData = [SELECT Google_Doc_WebViewLink__c FROM Template_Data__c WHERE Template__c=:id];
+            return templateData.Google_Doc_WebViewLink__c;
+        } catch (Exception e) {
+            System.debug('Error In getTemplate ==> '+e.getMessage());
+            Log_Handler.store_Exception(e,'GoogleDriveTemplatesController','getTemplate');
+            return null;
+        }
+    }
 }

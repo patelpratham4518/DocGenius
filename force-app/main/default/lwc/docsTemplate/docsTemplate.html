@@ -1,5 +1,4 @@
 <template>
-  
         <template if:true={showPopup}>
             <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
                 <div class="slds-modal__container">
@@ -21,25 +20,25 @@
                         <template for:each={templates} for:item="template">
                             <li class="slds-dropdown__item" role="presentation" key={template.id}>
                                 <a aria-checked="false" href="#" role="menuitemcheckbox" tabindex="-1">
-                                  <span class="slds-truncate" data-id={template.id} onclick={handleTemplateClick}> {template.name} </span>
+                                    <span class="slds-truncate" data-id={template.id} onclick={handleTemplateClick}> {template.name} </span>
                                 </a>
-                              </li>
+                            </li>
                         </template>
                     </ul>
                 </div>
-                </div>
-                </div>
-                </section>
-                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
         </template>
 
-    <template lwc:if={selectedTemplate}>
-        <div>
-            <iframe src={selectedTemplate.webViewLink} style="height: 500px; width:50%"></iframe>
-        </div>
-    </template>
+        <template lwc:if={webViewLink}>
+            <div>
+                <iframe src={webViewLink} style="height: 500px; width:50%"></iframe>
+            </div>
+        </template>
 
-    <template lwc:if={isSpinner}>
-        <c-document-loader></c-document-loader>
-    </template>
+        <template lwc:if={isSpinner}>
+            <c-document-loader></c-document-loader>
+        </template>
 </template>
