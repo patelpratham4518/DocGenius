@@ -38,4 +38,8 @@
             <iframe src={selectedTemplate.webViewLink} style="height: 500px; width:50%"></iframe>
         </div>
     </template>
+
+    <template lwc:if={isSpinner}>
+        <c-document-loader></c-document-loader>
+    </template>
 </template>
