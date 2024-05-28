@@ -10,7 +10,7 @@ public with sharing class GoogleDriveTemplatesController {
 
             Map<String, String> params = new Map<String, String>();
             params.put('q','mimeType= "application/vnd.openxmlformats-officedocument.wordprocessingml.document" or mimeType= "application/vnd.google-apps.document"');
-            params.put('fields','files(id,name,mimeType,webViewLink)');
+            params.put('fields','files(id,name,webViewLink,createdTime,size)');
 
             String paramString = '';
             for (String key : params.keySet()) {
@@ -134,3 +134,4 @@ public with sharing class GoogleDriveTemplatesController {
         }
     }
 }
+// SELECT Google_Doc_WebViewLink__c FROM Template_Data__c WHERE Template__c='a09F300000DMIOmIAP'

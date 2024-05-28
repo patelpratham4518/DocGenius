@@ -15,7 +15,7 @@ export default class DocsTemplate extends LightningElement {
    
     connectedCallback(){
 
-        getTemplate({id:this.templateId}).then(response => {
+        getTemplate({id :this.templateId}).then(response => {
             console.log('Response ==> ',response);
             if (response) {
                 this.webViewLink = response
@@ -32,14 +32,6 @@ export default class DocsTemplate extends LightningElement {
             console.log('Error ==> ',error);
         })
 
-        // if (!this.selectedTemplate) {
-        //     this.showPopup = true
-        //     getAllDocs({isAccessError : false, newAccessToken : null})
-        //     .then((response)=>{
-        //          this.templates =  JSON.parse(response)
-        //             this.isSpinner = false
-        //     })
-        // }
     }
     closePopup(){
         this.showPopup = false
