@@ -1,31 +1,37 @@
 <template>
-    <lightning-button label="Select Template" onclick={openPopup}></lightning-button>
-    <!-- <template if:true={showPopup}> -->
-        <!-- this should be incapsulated in its own component, see https://developer.salesforce.com/docs/component-library/bundle/lightning-modal/documentation -->
+  
         <template if:true={showPopup}>
-          <lightning-modal-header label="Select Template"></lightning-modal-header>
-          <lightning-modal-body>
-            name
-            <ul>
-                <template for:each={templates} for:item="template">
-                    <li key={template.id} data-id={template.id} onclick={handleTemplateClick}>{template.name}</li>
-                </template>
-            </ul>
-          </lightning-modal-body>
-
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                <lightning-icon
+                    icon-name="utility:close"
+                    size="medium"
+                    alternative-text="Indicates close"
+                    onclick={closePopup}
+                >
+                </lightning-icon>
+                <span class="slds-assistive-text">Cancel and close</span>
+                </button>
+                <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate" tabindex="-1">Select Template</h1>
+                </div>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                        <template for:each={templates} for:item="template">
+                            <li class="slds-dropdown__item" role="presentation" key={template.id}>
+                                <a aria-checked="false" href="#" role="menuitemcheckbox" tabindex="-1">
+                                  <span class="slds-truncate" data-id={template.id} onclick={handleTemplateClick}> {template.name} </span>
+                                </a>
+                              </li>
+                        </template>
+                    </ul>
+                </div>
+                </div>
+                </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
         </template>
-        <!-- <div class="popup">
-            <header>
-                <h2>Select Template</h2>
-                <button class="close-btn" onclick={closePopup}>X</button>
-            </header>
-            <ul>
-                <template for:each={templates} for:item="template">
-                    <li key={template.id} data-id={template.id} onclick={handleTemplateClick}>{template.name}</li>
-                </template>
-            </ul>
-        </div> -->
-    <!-- </template> -->
 
     <template lwc:if={selectedTemplate}>
         <div>

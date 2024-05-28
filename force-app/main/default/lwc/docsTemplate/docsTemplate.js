@@ -3,15 +3,19 @@ import getAllDocs from '@salesforce/apex/GoogleDriveTemplatesController.getAllDo
 
 export default class DocsTemplate extends LightningElement {
     selectedTemplate
-    showPopup = true
+    showPopup
     @track templates
    
     connectedCallback(){
-       getAllDocs({isAccessError : false, newAccessToken : null})
-       .then((response)=>{
-        console.log('Files ==> ',response);
-            this.templates =  JSON.parse(response)
-       })
+        if (!this.selectedTemplate) {
+            this.showPopup = true
+            getAllDocs({isAccessError : false, newAccessToken : null})
+            .then((response)=>{
+                 this.templates =  JSON.parse(response)
+            })
+        }else {
+            this.showPopup = false
+        }
     }
     closePopup(){
         this.showPopup = false
