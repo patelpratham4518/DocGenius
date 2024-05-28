@@ -1,0 +1,35 @@
+<template>
+    <lightning-button label="Select Template" onclick={openPopup}></lightning-button>
+    <!-- <template if:true={showPopup}> -->
+        <!-- this should be incapsulated in its own component, see https://developer.salesforce.com/docs/component-library/bundle/lightning-modal/documentation -->
+        <template if:true={showPopup}>
+          <lightning-modal-header label="Select Template"></lightning-modal-header>
+          <lightning-modal-body>
+            name
+            <ul>
+                <template for:each={templates} for:item="template">
+                    <li key={template.id} data-id={template.id} onclick={handleTemplateClick}>{template.name}</li>
+                </template>
+            </ul>
+          </lightning-modal-body>
+
+        </template>
+        <!-- <div class="popup">
+            <header>
+                <h2>Select Template</h2>
+                <button class="close-btn" onclick={closePopup}>X</button>
+            </header>
+            <ul>
+                <template for:each={templates} for:item="template">
+                    <li key={template.id} data-id={template.id} onclick={handleTemplateClick}>{template.name}</li>
+                </template>
+            </ul>
+        </div> -->
+    <!-- </template> -->
+
+    <template lwc:if={selectedTemplate}>
+        <div>
+            <iframe src={selectedTemplate.webViewLink} style="height: 500px; width:50%"></iframe>
+        </div>
+    </template>
+</template>
