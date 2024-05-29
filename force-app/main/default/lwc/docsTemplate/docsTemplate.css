@@ -1,0 +1,28 @@
+.body{
+    display: flex;
+    gap: 1rem;
+}
+iframe{
+    height: 500px;
+    width: -webkit-fill-available;
+    margin: 2vh;
+    padding: 1vh;
+}
+.left{
+    display: grid;
+    width: -webkit-fill-available;
+}
+.tabSection{    
+    height: 2rem;
+    width: 100%;
+    background-color: brown;
+    margin: 2vh;
+    padding: 1vh;
+    border-radius:1px;
+}
+.fieldMappingContainer{
+    width: 30rem;
+    background-color: blueviolet;
+    margin: 2vh;
+    padding: 1vh;
+}

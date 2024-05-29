@@ -16,7 +16,6 @@ export default class DocsTemplate extends LightningElement {
     connectedCallback(){
 
         getTemplate({id :this.templateId}).then(response => {
-            console.log('Response ==> ',response);
             if (response) {
                 this.webViewLink = response
                 this.isSpinner = false
