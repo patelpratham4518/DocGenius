@@ -1,9 +1,8 @@
 import { LightningElement, track, wire ,api} from 'lwc';
-import getAllDocs from '@salesforce/apex/GoogleDriveTemplatesController.getAllDocs'
-import getTemplate from '@salesforce/apex/GoogleDriveTemplatesController.getTemplate'
+import getAllDocs from '@salesforce/apex/GoogleDocTemplateEditorController.getAllDocs'
+import getTemplate from '@salesforce/apex/GoogleDocTemplateEditorController.getTemplate'
 
-export default class DocsTemplate extends LightningElement {
-
+export default class GoogleDocTemplateEditor extends LightningElement {
     @api templateId = "a09F300000DMIOmIAP"
     @api objectName
 

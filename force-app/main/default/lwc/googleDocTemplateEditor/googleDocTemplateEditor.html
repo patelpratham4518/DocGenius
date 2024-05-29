@@ -1,0 +1,19 @@
+<template>
+    <div class="body">
+        <div class="tabSection">Tabsection</div>
+        <div class="main">
+            <template lwc:if={webViewLink}>
+                <iframe src={webViewLink}></iframe>
+            </template>
+            <div class="fieldMappingContainer">
+                fieldMappingContainer
+            </div>
+        </div>
+
+        <template if:true={showPopup}></template>
+
+        <template lwc:if={isSpinner}>
+            <c-document-loader></c-document-loader>
+        </template>
+    </div>
+</template>

@@ -11,7 +11,6 @@
         <div class="fieldMappingContainer">
             fieldMappingContainer
         </div>
-
         <!-- <template if:true={showPopup}>
                 <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
                 <div class="slds-modal__container">
@@ -64,17 +63,31 @@
                             <div class="header">
                                 Select Google Doc
                             </div>
+                            
                             <div class="profile">
                                 Profile
                             </div>
                         </div>
+                        <div class="serarch">
+                            Search 
+                        </div>
+                        <div class="docs">
+                            <template for:each={templates} for:item="template">
+                                <div class="doc" key={template.id} data-id={template.id} onclick={handleTemplateClick}>
+                                    Name : {template.name} 
+                                    Size : {template.size} 
+                                    Created : {template.createdTime}
+                                </div>
+                            </template>
+                        </div>
+                        <div class="footer">
+                            <button type="button" onclick={closePopup}>Cancel</button>
+                            <button type="button" onclick={next}>Next</button>
+                        </div>
                     </div>
-                 
-
                 </div>
             </section>
         </template>
-
 
 
         <template lwc:if={isSpinner}>

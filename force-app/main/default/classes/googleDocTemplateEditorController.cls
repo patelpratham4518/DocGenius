@@ -1,7 +1,7 @@
-public with sharing class GoogleDriveTemplatesController {
-    public GoogleDriveTemplatesController() {
-    }
+public with sharing class googleDocTemplateEditorController {
+    public googleDocTemplateEditorController() {
 
+    }
     @AuraEnabled
     public static String getAllDocs() {
         try {
@@ -27,19 +27,17 @@ public with sharing class GoogleDriveTemplatesController {
 
             Http http = new Http();
             HttpResponse response = http.send(request);
-            System.debug('Body '+response.getBody());
+
             if (response.getStatusCode() == 200) {
                 Map<String, Object> responseMap = (Map<String, Object>)JSON.deserializeUntyped(response.getBody());
                 return JSON.serialize(responseMap.get('files'));
             } else if (response.getStatusCode() == 401) {
                 System.debug('Here is some error 401');
                 response = refreshAccessToken(authProvider,request);
-                System.debug('Body '+response.getBody());
                 if (response.getStatusCode() == 200) {
                     Map<String, Object> responseMap = (Map<String, Object>)JSON.deserializeUntyped(response.getBody());
                     return JSON.serialize(responseMap.get('files'));
                 }
-
             }
             return null;
            
@@ -49,7 +47,6 @@ public with sharing class GoogleDriveTemplatesController {
             return null;
         }
     }
-
 
     private static HttpResponse refreshAccessToken(AuthProviderSettings__c settings,HttpRequest requestPending) {
         System.debug('Refresh Access token');
@@ -89,15 +86,18 @@ public with sharing class GoogleDriveTemplatesController {
         try {
             String endpoint = 'https://www.googleapis.com/drive/v3/files/'+id+'/export';
             AuthProviderSettings__c authProvider = AuthProviderSettings__c.getInstance();
+
             Map<String, String> params = new Map<String, String>();
             params.put('mimeType','text/html');
             String paramString = '';
+
             for (String key : params.keySet()) {
                 if (!String.isEmpty(paramString)) {
                     paramString += '&';
                 }
                 paramString += EncodingUtil.urlEncode(key, 'UTF-8') + '=' + EncodingUtil.urlEncode(params.get(key), 'UTF-8');
             }
+
             HttpRequest request = new HttpRequest();
             request.setEndpoint(endpoint + '?'+paramString);
             request.setMethod('GET');
@@ -110,7 +110,6 @@ public with sharing class GoogleDriveTemplatesController {
                 System.debug('Here is some error 401');
                 response = refreshAccessToken(authProvider,request);
                 return JSON.serialize(response.getBody());
-            
             }
             return null;
     
