@@ -123,7 +123,6 @@ public with sharing class GoogleDriveTemplatesController {
 
     @AuraEnabled
     public static string getTemplate(String id){
-        System.debug('Get Template Id ==> '+id);
         try {
             Template_Data__c templateData = [SELECT Google_Doc_WebViewLink__c FROM Template_Data__c WHERE Template__c=:id];
             return templateData.Google_Doc_WebViewLink__c;
