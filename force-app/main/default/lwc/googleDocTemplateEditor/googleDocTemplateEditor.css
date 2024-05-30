@@ -90,12 +90,30 @@ section .main{
 }
 
 .search{
-    background-color: #00AEFF;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px 0px #00000033;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: left;
     border-radius: 0.5rem;
     width:35%;
     margin-top: 3rem;
     margin-left: 1rem;
     height:5%;
+}
+
+input{
+    border: none;
+    margin:1%;
+    width:80%;
+}
+
+.searchIcon{
+    margin: 1%;
+    height:50%;
+    width:10%;
 }
 
 .footer{
@@ -177,6 +195,7 @@ section .main{
     text-align: left;
     width:88%;
     overflow:visible;
+    margin-left: 3%;
 }
 
 .docSecondRow{
