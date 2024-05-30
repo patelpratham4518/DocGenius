@@ -13,22 +13,39 @@
 
         <template if:true={showPopup}>
         <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
-            <div class="close-div" onclick={closePopup}>
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7334 2.5537C20.8179 2.46918 20.885 2.36885 20.9307 2.25843C20.9765 2.14801 21 2.02966 21 1.91013C21 1.79061 20.9765 1.67226 20.9307 1.56184C20.885 1.45142 20.8179 1.35109 20.7334 1.26657C20.6489 1.18206 20.5486 1.11502 20.4382 1.06928C20.3277 1.02354 20.2094 1 20.0899 1C19.9703 1 19.852 1.02354 19.7416 1.06928C19.6311 1.11502 19.5308 1.18206 19.4463 1.26657L11 9.71469L2.5537 1.26657C2.46918 1.18206 2.36885 1.11502 2.25843 1.06928C2.14801 1.02354 2.02966 1 1.91013 1C1.79061 1 1.67226 1.02354 1.56184 1.06928C1.45142 1.11502 1.35109 1.18206 1.26657 1.26657C1.18206 1.35109 1.11502 1.45142 1.06928 1.56184C1.02354 1.67226 1 1.79061 1 1.91013C1 2.02966 1.02354 2.14801 1.06928 2.25843C1.11502 2.36885 1.18206 2.46918 1.26657 2.5537L9.71469 11L1.26657 19.4463C1.09589 19.617 1 19.8485 1 20.0899C1 20.3312 1.09589 20.5627 1.26657 20.7334C1.43726 20.9041 1.66875 21 1.91013 21C2.15152 21 2.38301 20.9041 2.5537 20.7334L11 12.2853L19.4463 20.7334C19.617 20.9041 19.8485 21 20.0899 21C20.3312 21 20.5627 20.9041 20.7334 20.7334C20.9041 20.5627 21 20.3312 21 20.0899C21 19.8485 20.9041 19.617 20.7334 19.4463L12.2853 11L20.7334 2.5537Z" fill="black" stroke="black"/>
-                </svg>                                      
-            </div>
             <div class="main">
                 <div class="firstRow">
                     <div class="title">Select Google Doc.</div>
                     <div class="profile">Profile</div>
                 </div>
-
+                <div class="search">Search</div>
+                <div class="documents">
+                    Documents
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="51" viewBox="0 0 38 51" fill="none">
+                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V47.5227C0 49.4432 1.59499 51 3.5625 51H34.4375C36.405 51 38 49.4432 38 47.5227V13.9091L23.75 0H3.5625Z" fill="#4E8DF5"/>
+                        <path d="M3.5625 51.0001C1.59499 51.0001 0 49.4433 0 47.5228V46.9433C0 48.8637 1.59499 50.4206 3.5625 50.4206H34.4375C36.405 50.4206 38 48.8637 38 46.9433V47.5228C38 49.4433 36.405 51.0001 34.4375 51.0001H3.5625Z" fill="#417EE9"/>
+                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V4.05682C0 2.13637 1.59499 0.579545 3.5625 0.579545H24.3438L23.75 0H3.5625Z" fill="#639AF6"/>
+                        <path d="M38.0001 25.7899V13.9092L35.9219 11.8808H25.9002C25.1068 11.8808 24.7094 12.8172 25.2705 13.3648L38.0001 25.7899Z" fill="url(#paint0_linear_1450_135)"/>
+                        <path d="M23.75 0L38 13.9091H27.3125C25.345 13.9091 23.75 12.3523 23.75 10.4318V0Z" fill="#A6C5FA"/>
+                        <path d="M28.5 25.5H9.5V27.8182H28.5V25.5Z" fill="white"/>
+                        <path d="M28.5 30.1364H9.5V32.4545H28.5V30.1364Z" fill="white"/>
+                        <path d="M9.5 34.7727H28.5V37.0909H9.5V34.7727Z" fill="white"/>
+                        <path d="M23.75 39.4091H9.5V41.7273H23.75V39.4091Z" fill="white"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_1450_135" x1="30.8751" y1="25.7899" x2="30.8751" y2="11.591" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4E8DF5"/>
+                        <stop offset="1" stop-color="#3D6ACD"/>
+                        </linearGradient>
+                        </defs>
+                        </svg>
+                </div>
+                <div class="footer">
+                    <div class="button cancel" onclick={closePopup}>Cancel</div>
+                    <div class="button next" onclick={next}>Save</div>
+                </div>
             </div>
         </section>
         </template>
-
-
 
         <template lwc:if={isSpinner}>
             <c-document-loader></c-document-loader>
