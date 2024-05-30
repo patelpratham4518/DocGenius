@@ -29,3 +29,40 @@ iframe{
     padding: 1%;
 }
 
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .main{
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 50%;
+    height:67%;
+    /* height: fit-content; */
+    background-color: white;
+    background-image: var(--background-image-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    gap: 1.25rem;
+}
+
+.close-div {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    cursor: pointer;
+}
+
+.close-div svg:hover{
+    width: 1.563rem;
+    height: 1.563rem;
+    transition: all 0.1s;
+}
