@@ -87,7 +87,6 @@ export default class GoogleDocTemplateEditor extends LightningElement {
 
     handleSearch(event){
         this.serachString = event.target.value
-        console.log("Handle Search",this.serachString);
         if (this.serachString) {
             this.templates = this.allTemplates.filter(template => {
                 return template.name.includes(this.serachString)

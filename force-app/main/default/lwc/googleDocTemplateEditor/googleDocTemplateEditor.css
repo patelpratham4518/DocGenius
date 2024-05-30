@@ -238,3 +238,6 @@ input{
 
 }
 
+input:focus{
+    outline: none;
+}
