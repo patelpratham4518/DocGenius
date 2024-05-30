@@ -20,31 +20,11 @@
                 </div>
                 <div class="search">Search</div>
                 <div class="documents">
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <div class="docs-container"></div>
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="38" height="51" viewBox="0 0 38 51" fill="none">
-                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V47.5227C0 49.4432 1.59499 51 3.5625 51H34.4375C36.405 51 38 49.4432 38 47.5227V13.9091L23.75 0H3.5625Z" fill="#4E8DF5"/>
-                        <path d="M3.5625 51.0001C1.59499 51.0001 0 49.4433 0 47.5228V46.9433C0 48.8637 1.59499 50.4206 3.5625 50.4206H34.4375C36.405 50.4206 38 48.8637 38 46.9433V47.5228C38 49.4433 36.405 51.0001 34.4375 51.0001H3.5625Z" fill="#417EE9"/>
-                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V4.05682C0 2.13637 1.59499 0.579545 3.5625 0.579545H24.3438L23.75 0H3.5625Z" fill="#639AF6"/>
-                        <path d="M38.0001 25.7899V13.9092L35.9219 11.8808H25.9002C25.1068 11.8808 24.7094 12.8172 25.2705 13.3648L38.0001 25.7899Z" fill="url(#paint0_linear_1450_135)"/>
-                        <path d="M23.75 0L38 13.9091H27.3125C25.345 13.9091 23.75 12.3523 23.75 10.4318V0Z" fill="#A6C5FA"/>
-                        <path d="M28.5 25.5H9.5V27.8182H28.5V25.5Z" fill="white"/>
-                        <path d="M28.5 30.1364H9.5V32.4545H28.5V30.1364Z" fill="white"/>
-                        <path d="M9.5 34.7727H28.5V37.0909H9.5V34.7727Z" fill="white"/>
-                        <path d="M23.75 39.4091H9.5V41.7273H23.75V39.4091Z" fill="white"/>
-                        <defs>
-                        <linearGradient id="paint0_linear_1450_135" x1="30.8751" y1="25.7899" x2="30.8751" y2="11.591" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#4E8DF5"/>
-                        <stop offset="1" stop-color="#3D6ACD"/>
-                        </linearGradient>
-                        </defs>
-                    </svg> -->
+                    <template for:each={templates} for:item="template">
+                        <div class="docs-container" key={template.id}>
+                        </div>
+                    </template>
+                    
                 </div>
                 <div class="footer">
                     <div class="button cancel" onclick={closePopup}>Cancel</div>
@@ -59,3 +39,20 @@
         </template>
     </div>
 </template>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 51" fill="none" class="small">
+                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V47.5227C0 49.4432 1.59499 51 3.5625 51H34.4375C36.405 51 38 49.4432 38 47.5227V13.9091L23.75 0H3.5625Z" fill="#4E8DF5"/>
+                        <path d="M3.5625 51.0001C1.59499 51.0001 0 49.4433 0 47.5228V46.9433C0 48.8637 1.59499 50.4206 3.5625 50.4206H34.4375C36.405 50.4206 38 48.8637 38 46.9433V47.5228C38 49.4433 36.405 51.0001 34.4375 51.0001H3.5625Z" fill="#417EE9"/>
+                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V4.05682C0 2.13637 1.59499 0.579545 3.5625 0.579545H24.3438L23.75 0H3.5625Z" fill="#639AF6"/>
+                        <path d="M38.0001 25.7899V13.9092L35.9219 11.8808H25.9002C25.1068 11.8808 24.7094 12.8172 25.2705 13.3648L38.0001 25.7899Z" fill="url(#paint0_linear_1450_51)"/>
+                        <path d="M23.75 0L38 13.9091H27.3125C25.345 13.9091 23.75 12.3523 23.75 10.4318V0Z" fill="#A6C5FA"/>
+                        <path d="M28.5 25.5H9.5V27.8182H28.5V25.5Z" fill="white"/>
+                        <path d="M28.5 30.1364H9.5V32.4545H28.5V30.1364Z" fill="white"/>
+                        <path d="M9.5 34.7727H28.5V37.0909H9.5V34.7727Z" fill="white"/>
+                        <path d="M23.75 39.4091H9.5V41.7273H23.75V39.4091Z" fill="white"/>
+                        <defs>
+                        <linearGradient id="paint0_linear_1450_51" x1="30.8751" y1="25.7899" x2="30.8751" y2="11.591" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4E8DF5"/>
+                        <stop offset="1" stop-color="#3D6ACD"/>
+                        </linearGradient>
+                        </defs>
+                    </svg> -->
