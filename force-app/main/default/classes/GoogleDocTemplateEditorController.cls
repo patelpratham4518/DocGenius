@@ -11,7 +11,7 @@ public with sharing class GoogleDocTemplateEditorController {
 
             Map<String, String> params = new Map<String, String>();
             params.put('q','mimeType= "application/vnd.openxmlformats-officedocument.wordprocessingml.document" or mimeType= "application/vnd.google-apps.document"');
-            params.put('fields','files(id,name,webViewLink,createdTime,size)');
+            params.put('fields','files(id,name,webViewLink,createdTime,modifiedTime,size)');
 
             String paramString = '';
             for (String key : params.keySet()) {
@@ -132,4 +132,6 @@ public with sharing class GoogleDocTemplateEditorController {
             return null;
         }
     }
+
+
 }

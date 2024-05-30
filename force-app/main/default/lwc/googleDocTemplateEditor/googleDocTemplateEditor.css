@@ -106,16 +106,16 @@ section .main{
     justify-self: baseline;
 }
 .button{
-    height:1.5rem;
+    height:2rem;
     width:6rem;
     border-radius: 0.3rem;
-    background-color: #00AEFF;
-    font-family: DM Sans;
+    /* font-family: DM Sans; */
     font-size: 18px;
     font-weight: 700;
     line-height: 20px;
     text-align: center;
     cursor: pointer;
+    padding-top: 1%;
 
 }
 .cancel{
@@ -159,8 +159,68 @@ section .main{
     box-shadow: 0px 0px 5px 0px #00000040;
 }
 
+
+
+.docFirstRow{
+    margin: 5%;
+    display: flex;
+    flex-direction: row;
+}
 .small{
     height:10%;
     width:10%;
-   
+}
+.docName{
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 13.2px;
+    text-align: left;
+    width:88%;
+    overflow:visible;
+}
+
+.docSecondRow{
+    background: #D9D9D980;
+    box-shadow: 0px 0px 1px 0px #00000040 inset;
+    margin-inline: 5%;
+    height:50%;
+    border-radius: 0.5rem;
+}
+.big{
+    height:80%;
+    width:40%;
+    margin-top: 5%;
+}
+
+.docThirdRow{
+    margin-top: 5%;
+    margin-inline: 5%;
+    display: flex;
+    flex-direction: row;
+    
+}
+.size{
+    /* float: left; */
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 11px;
+    text-align: left;
+
+}
+.date{
+    /* float: right; */
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 11px;
+    text-align: left;
+    margin-left: 2rem;
+
+}
+
+.refresh{
+    height:1rem;
+    width: 1rem;
 }

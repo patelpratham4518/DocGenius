@@ -19,9 +19,65 @@
                     <div class="profile">Profile</div>
                 </div>
                 <div class="search">Search</div>
+                <!-- <svg class="refresh" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"  version="1.1" id="Capa_1" viewBox="0 0 489.645 489.645" xml:space="preserve">
+                    <g>
+                        <path d="M460.656,132.911c-58.7-122.1-212.2-166.5-331.8-104.1c-9.4,5.2-13.5,16.6-8.3,27c5.2,9.4,16.6,13.5,27,8.3   c99.9-52,227.4-14.9,276.7,86.3c65.4,134.3-19,236.7-87.4,274.6c-93.1,51.7-211.2,17.4-267.6-70.7l69.3,14.5   c10.4,2.1,21.8-4.2,23.9-15.6c2.1-10.4-4.2-21.8-15.6-23.9l-122.8-25c-20.6-2-25,16.6-23.9,22.9l15.6,123.8   c1,10.4,9.4,17.7,19.8,17.7c12.8,0,20.8-12.5,19.8-23.9l-6-50.5c57.4,70.8,170.3,131.2,307.4,68.2   C414.856,432.511,548.256,314.811,460.656,132.911z"/>
+                    </g>
+                </svg> -->
                 <div class="documents">
                     <template for:each={templates} for:item="template">
                         <div class="docs-container" key={template.id}>
+                            <div class="docFirstRow">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 51" fill="none" class="small">
+                                    <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V47.5227C0 49.4432 1.59499 51 3.5625 51H34.4375C36.405 51 38 49.4432 38 47.5227V13.9091L23.75 0H3.5625Z" fill="#4E8DF5"/>
+                                    <path d="M3.5625 51.0001C1.59499 51.0001 0 49.4433 0 47.5228V46.9433C0 48.8637 1.59499 50.4206 3.5625 50.4206H34.4375C36.405 50.4206 38 48.8637 38 46.9433V47.5228C38 49.4433 36.405 51.0001 34.4375 51.0001H3.5625Z" fill="#417EE9"/>
+                                    <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V4.05682C0 2.13637 1.59499 0.579545 3.5625 0.579545H24.3438L23.75 0H3.5625Z" fill="#639AF6"/>
+                                    <path d="M38.0001 25.7899V13.9092L35.9219 11.8808H25.9002C25.1068 11.8808 24.7094 12.8172 25.2705 13.3648L38.0001 25.7899Z" fill="url(#paint0_linear_1450_51)"/>
+                                    <path d="M23.75 0L38 13.9091H27.3125C25.345 13.9091 23.75 12.3523 23.75 10.4318V0Z" fill="#A6C5FA"/>
+                                    <path d="M28.5 25.5H9.5V27.8182H28.5V25.5Z" fill="white"/>
+                                    <path d="M28.5 30.1364H9.5V32.4545H28.5V30.1364Z" fill="white"/>
+                                    <path d="M9.5 34.7727H28.5V37.0909H9.5V34.7727Z" fill="white"/>
+                                    <path d="M23.75 39.4091H9.5V41.7273H23.75V39.4091Z" fill="white"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_1450_51" x1="30.8751" y1="25.7899" x2="30.8751" y2="11.591" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4E8DF5"/>
+                                    <stop offset="1" stop-color="#3D6ACD"/>
+                                    </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="docName">{template.name}</div>
+                            </div>
+                            <div class="docSecondRow">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 51" fill="none" class="big">
+                                    <path
+                                        d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V47.5227C0 49.4432 1.59499 51 3.5625 51H34.4375C36.405 51 38 49.4432 38 47.5227V13.9091L23.75 0H3.5625Z"
+                                        fill="#4E8DF5" />
+                                    <path
+                                        d="M3.5625 51.0001C1.59499 51.0001 0 49.4433 0 47.5228V46.9433C0 48.8637 1.59499 50.4206 3.5625 50.4206H34.4375C36.405 50.4206 38 48.8637 38 46.9433V47.5228C38 49.4433 36.405 51.0001 34.4375 51.0001H3.5625Z"
+                                        fill="#417EE9" />
+                                    <path
+                                        d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V4.05682C0 2.13637 1.59499 0.579545 3.5625 0.579545H24.3438L23.75 0H3.5625Z"
+                                        fill="#639AF6" />
+                                    <path
+                                        d="M38.0001 25.7899V13.9092L35.9219 11.8808H25.9002C25.1068 11.8808 24.7094 12.8172 25.2705 13.3648L38.0001 25.7899Z"
+                                        fill="url(#paint0_linear_1450_51)" />
+                                    <path d="M23.75 0L38 13.9091H27.3125C25.345 13.9091 23.75 12.3523 23.75 10.4318V0Z" fill="#A6C5FA" />
+                                    <path d="M28.5 25.5H9.5V27.8182H28.5V25.5Z" fill="white" />
+                                    <path d="M28.5 30.1364H9.5V32.4545H28.5V30.1364Z" fill="white" />
+                                    <path d="M9.5 34.7727H28.5V37.0909H9.5V34.7727Z" fill="white" />
+                                    <path d="M23.75 39.4091H9.5V41.7273H23.75V39.4091Z" fill="white" />
+                                    <defs>
+                                        <linearGradient x1="30.8751" y1="25.7899" x2="30.8751" y2="11.591" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#4E8DF5" />
+                                            <stop offset="1" stop-color="#3D6ACD" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="docThirdRow">
+                                <div class="size">{template.size}</div>
+                                <div class="date">Date: {template.createdTime}</div>
+                            </div>
                         </div>
                     </template>
                     
@@ -39,20 +95,4 @@
         </template>
     </div>
 </template>
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 51" fill="none" class="small">
-                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V47.5227C0 49.4432 1.59499 51 3.5625 51H34.4375C36.405 51 38 49.4432 38 47.5227V13.9091L23.75 0H3.5625Z" fill="#4E8DF5"/>
-                        <path d="M3.5625 51.0001C1.59499 51.0001 0 49.4433 0 47.5228V46.9433C0 48.8637 1.59499 50.4206 3.5625 50.4206H34.4375C36.405 50.4206 38 48.8637 38 46.9433V47.5228C38 49.4433 36.405 51.0001 34.4375 51.0001H3.5625Z" fill="#417EE9"/>
-                        <path d="M3.5625 0C1.59499 0 0 1.55683 0 3.47727V4.05682C0 2.13637 1.59499 0.579545 3.5625 0.579545H24.3438L23.75 0H3.5625Z" fill="#639AF6"/>
-                        <path d="M38.0001 25.7899V13.9092L35.9219 11.8808H25.9002C25.1068 11.8808 24.7094 12.8172 25.2705 13.3648L38.0001 25.7899Z" fill="url(#paint0_linear_1450_51)"/>
-                        <path d="M23.75 0L38 13.9091H27.3125C25.345 13.9091 23.75 12.3523 23.75 10.4318V0Z" fill="#A6C5FA"/>
-                        <path d="M28.5 25.5H9.5V27.8182H28.5V25.5Z" fill="white"/>
-                        <path d="M28.5 30.1364H9.5V32.4545H28.5V30.1364Z" fill="white"/>
-                        <path d="M9.5 34.7727H28.5V37.0909H9.5V34.7727Z" fill="white"/>
-                        <path d="M23.75 39.4091H9.5V41.7273H23.75V39.4091Z" fill="white"/>
-                        <defs>
-                        <linearGradient id="paint0_linear_1450_51" x1="30.8751" y1="25.7899" x2="30.8751" y2="11.591" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#4E8DF5"/>
-                        <stop offset="1" stop-color="#3D6ACD"/>
-                        </linearGradient>
-                        </defs>
-                    </svg> -->
+                 
