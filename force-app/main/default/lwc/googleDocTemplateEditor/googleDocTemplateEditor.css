@@ -115,8 +115,7 @@ section .main{
     line-height: 20px;
     text-align: center;
     cursor: pointer;
-    padding-top: 1%;
-
+    padding-top: 0.6%;
 }
 .cancel{
     margin-right: 0.5rem;
@@ -220,7 +219,3 @@ section .main{
 
 }
 
-.refresh{
-    height:1rem;
-    width: 1rem;
-}

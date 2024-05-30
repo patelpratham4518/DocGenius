@@ -41,7 +41,10 @@ export default class GoogleDocTemplateEditor extends LightningElement {
         this.showPopup = true
     }
     handleTemplateClick(event) {
-        const templateId = event.target.dataset.id;
+        
+
+        const templateId = event.currentTarget.dataset.id;
+
         this.selectedTemplate = this.templates.find(template => template.id === templateId);
     }
 
