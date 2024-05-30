@@ -97,14 +97,7 @@ section .main{
     margin-left: 1rem;
     height:5%;
 }
-.documents{
-    width: 100;
-    height: 65%;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-    background-color: black;
-}
+
 .footer{
     width: 100%;
     display: flex;
@@ -139,3 +132,27 @@ section .main{
 }
 
 
+.documents{
+    width: 100;
+    height: 65%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-y: auto;
+    max-height: 65%;
+    gap: 1rem;
+
+}
+.docs-container{
+    border-radius: 0.5 rem;
+    height:94%;
+    width:94%;    
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 5px 0px #00000040;
+}
