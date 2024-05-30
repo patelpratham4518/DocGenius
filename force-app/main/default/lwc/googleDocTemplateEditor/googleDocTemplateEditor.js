@@ -11,6 +11,8 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     showPopup = false
     webViewLink
     @track templates
+    @track allTemplates
+    @track serachString = ""
    
     connectedCallback(){
 
@@ -22,8 +24,9 @@ export default class GoogleDocTemplateEditor extends LightningElement {
                 this.showPopup = true
                 getAllDocs()
                 .then((response)=>{
-                    this.templates =  JSON.parse(response)
+                    this.allTemplates =  JSON.parse(response)
                     this.setDateAndSize()
+                    this.templates = this.allTemplates
                     this.isSpinner = false
                 }).catch(error => {
                     console.log('Error ==> ',error);
@@ -51,8 +54,10 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     refreshDocs(){
         getAllDocs()
         .then((response)=>{
-             this.templates =  JSON.parse(response)
+             this.allTemplates =  JSON.parse(response)
              this.setDateAndSize()
+             this.templates = this.allTemplates
+             this.serachString = null
             this.isSpinner = false
         }).catch(error => {
             console.log('Error ==> ',error);
@@ -67,7 +72,7 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     }
 
     setDateAndSize(){
-        this.templates = this.templates.map(template => {
+        this.allTemplates = this.allTemplates.map(template => {
             template.createdTime = template.createdTime.split("T")[0]
             if (template.size < 1024) {
                 template.size = Math.round(template.size)+"Byte"
@@ -78,5 +83,17 @@ export default class GoogleDocTemplateEditor extends LightningElement {
             }
             return template
         })
+    }
+
+    handleSearch(event){
+        this.serachString = event.target.value
+        console.log("Handle Search",this.serachString);
+        if (this.serachString) {
+            this.templates = this.allTemplates.filter(template => {
+                return template.name.includes(this.serachString)
+            })
+        } else {
+            this.templates = this.allTemplates
+        }
     }
 }
