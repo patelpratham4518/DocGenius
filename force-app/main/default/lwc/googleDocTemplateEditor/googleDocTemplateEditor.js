@@ -59,6 +59,7 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     }
 
     refreshDocs(){
+        this.isSpinner = true
         this.getProfile()
         getAllDocs()
         .then((response)=>{
