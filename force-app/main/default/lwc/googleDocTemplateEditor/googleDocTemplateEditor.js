@@ -1,6 +1,7 @@
 import { LightningElement, track, wire ,api} from 'lwc';
 import getAllDocs from '@salesforce/apex/GoogleDocTemplateEditorController.getAllDocs'
 import getTemplate from '@salesforce/apex/GoogleDocTemplateEditorController.getTemplate'
+import getUsernameAndEmail from '@salesforce/apex/GoogleDocTemplateEditorController.getUsernameAndEmail'
 
 export default class GoogleDocTemplateEditor extends LightningElement {
     @api templateId = "a09F300000DMIOmIAP"
@@ -13,9 +14,10 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     @track templates
     @track allTemplates
     @track serachString = ""
+    @track profile
    
     connectedCallback(){
-
+        this.getProfile()
         getTemplate({id :this.templateId}).then(response => {
             if (response) {
                 this.webViewLink = response
@@ -57,6 +59,7 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     }
 
     refreshDocs(){
+        this.getProfile()
         getAllDocs()
         .then((response)=>{
              this.allTemplates =  JSON.parse(response)
@@ -99,5 +102,13 @@ export default class GoogleDocTemplateEditor extends LightningElement {
         } else {
             this.templates = this.allTemplates
         }
+    }
+
+    getProfile(){
+        getUsernameAndEmail().then(response =>{
+            this.profile = JSON.parse(response)
+        }).catch(error => {
+            console.log("Error ==> "+error);
+        })
     }
 }
