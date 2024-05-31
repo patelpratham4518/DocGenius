@@ -55,8 +55,11 @@ section {
     align-items: center;
     gap: 1.25rem;
 }
-
-
+.firstRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
 
 .title-div {
     width: 100%;
