@@ -98,7 +98,9 @@ export default class GoogleDocTemplateEditor extends LightningElement {
         this.serachString = event.target.value
         if (this.serachString) {
             this.templates = this.allTemplates.filter(template => {
-                return template.name.includes(this.serachString)
+                // return template.name.includes(this.serachString)
+                return template.name.toLowerCase().includes(this.serachString.toLowerCase())
+                
             })
         } else {
             this.templates = this.allTemplates
