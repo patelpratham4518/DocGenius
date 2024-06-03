@@ -136,6 +136,7 @@ public with sharing class GoogleDocTemplateEditorController {
     @AuraEnabled
     public static string getUsernameAndEmail(){
         try {
+
             AuthProviderSettings__c authProvider = AuthProviderSettings__c.getInstance();
             Map<String, String> profile = new Map<String, String>();
             profile.put('username',authProvider.username__c);
