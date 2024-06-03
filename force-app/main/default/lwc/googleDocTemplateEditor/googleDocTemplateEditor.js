@@ -15,8 +15,12 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     @track allTemplates
     @track serachString = ""
     @track profile
+
+   
+    
    
     connectedCallback(){
+        
         this.getProfile()
         getTemplate({id :this.templateId}).then(response => {
             if (response) {
@@ -26,9 +30,12 @@ export default class GoogleDocTemplateEditor extends LightningElement {
                 this.showPopup = true
                 getAllDocs()
                 .then((response)=>{
+                    
                     this.allTemplates =  JSON.parse(response)
                     this.setDateAndSize()
-                    this.templates = this.allTemplates
+                    if (this.allTemplates.length>0) {
+                        this.templates = this.allTemplates
+                    }
                     this.isSpinner = false
                 }).catch(error => {
                     console.log('Error ==> ',error);
@@ -64,7 +71,13 @@ export default class GoogleDocTemplateEditor extends LightningElement {
         .then((response)=>{
              this.allTemplates =  JSON.parse(response)
              this.setDateAndSize()
-             this.templates = this.allTemplates
+             if (this.allTemplates.length>0) {
+                 this.templates = this.allTemplates
+             }
+             else{
+                this.templates = undefined
+             }
+
              this.serachString = null
             this.isSpinner = false
         }).catch(error => {
@@ -73,9 +86,16 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     }
 
     next(){
+        console.log(this.selectedTemplate);
         if (this.selectedTemplate) {
             this.webViewLink = this.selectedTemplate.webViewLink
             this.closePopup()
+        }else{
+            const errorToast = this.template.querySelector('c-message-popup')
+            errorToast.showMessagePopup({
+                'title' : 'Please Select Template',
+                'message' : 'To go ahead you must have to select a template.',
+            }) 
         }
     }
 
@@ -97,7 +117,6 @@ export default class GoogleDocTemplateEditor extends LightningElement {
         this.serachString = event.target.value
         if (this.serachString) {
             this.templates = this.allTemplates.filter(template => {
-                // return template.name.includes(this.serachString)
                 return template.name.toLowerCase().includes(this.serachString.toLowerCase())
                 
             })
@@ -113,4 +132,5 @@ export default class GoogleDocTemplateEditor extends LightningElement {
             console.log("Error ==> "+error);
         })
     }
+
 }
