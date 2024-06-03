@@ -1,6 +1,8 @@
 .body{
-    /* margin: 1%; */
-    /* padding: 1%; */
+    margin-left: -0.75rem;
+    margin-top: -0.75rem;
+    width: calc(100% + 1.5rem);
+    height: calc(100% + 1.5rem);
 }
 
 .tabSection{
@@ -169,7 +171,6 @@ iframe{
 
 input{
     border: none;
-    /* margin:1%; */
     height: 100%;
     width:80%;
     font-family: Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
@@ -323,4 +324,19 @@ input:focus{
 
 .docs-container:hover{
     box-shadow: 1px 1px 5px 1px #00000040;
+}
+
+
+
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .section .main{
+      width:40rem;
+      height: 30rem;
+    }
+    .documents{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
 }

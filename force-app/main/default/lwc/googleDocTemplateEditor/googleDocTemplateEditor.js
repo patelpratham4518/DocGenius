@@ -55,7 +55,6 @@ export default class GoogleDocTemplateEditor extends LightningElement {
         this.selectedTemplate = this.templates.find(template => template.id === templateId);
         let template = event.currentTarget 
         template.classList.add("selected")
-        console.log(template);
     }
 
     refreshDocs(){
