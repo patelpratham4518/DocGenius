@@ -114,15 +114,20 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     }
 
     handleSearch(event){
-        this.serachString = event.target.value
-        if (this.serachString) {
-            this.templates = this.allTemplates.filter(template => {
-                return template.name.toLowerCase().includes(this.serachString.toLowerCase())
-                
-            })
-        } else {
-            this.templates = this.allTemplates
+        if (this.templates) {
+            this.serachString = event.target.value
+            if (this.serachString) {
+                this.templates = this.allTemplates.filter(template => {
+                    return template.name.toLowerCase().includes(this.serachString.toLowerCase())
+                    
+                })
+            } else {
+                this.templates = this.allTemplates
+            }
         }
+            
+
+    
     }
 
     getProfile(){
