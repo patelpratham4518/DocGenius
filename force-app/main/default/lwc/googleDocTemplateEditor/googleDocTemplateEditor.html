@@ -10,7 +10,7 @@
             </div>
         </div>
 
-
+    <template if:false={isSpinner}>
         <template if:true={showPopup}>
             <div class="section">
                 <div class="main">
@@ -214,7 +214,7 @@
                 </div>
             </div>
         </template>
-
+    </template>
         
         <template lwc:if={isSpinner}>
             <c-document-loader></c-document-loader>
