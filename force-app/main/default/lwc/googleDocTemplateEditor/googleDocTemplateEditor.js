@@ -3,6 +3,8 @@ import getAllDocs from '@salesforce/apex/GoogleDocTemplateEditorController.getAl
 import getTemplate from '@salesforce/apex/GoogleDocTemplateEditorController.getTemplate'
 import getUsernameAndEmail from '@salesforce/apex/GoogleDocTemplateEditorController.getUsernameAndEmail'
 
+
+
 export default class GoogleDocTemplateEditor extends LightningElement {
     @api templateId = "a09F300000DMIOmIAP"
     @api objectName

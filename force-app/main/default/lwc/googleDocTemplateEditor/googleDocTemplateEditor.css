@@ -1,3 +1,6 @@
+:host {
+    --background-image-url: 'default.jpg';
+}
 .body{
     margin-left: -0.75rem;
     margin-top: -0.75rem;
@@ -62,7 +65,7 @@ iframe{
     text-align: center;
     width: 55rem;
     height:35rem;
-    background-color: white;
+    background-color: white;    
     background-image: var(--background-image-url);
     background-size: contain;
     background-repeat: no-repeat;
