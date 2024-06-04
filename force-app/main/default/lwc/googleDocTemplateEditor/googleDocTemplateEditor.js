@@ -2,7 +2,7 @@ import { LightningElement, track, wire ,api} from 'lwc';
 import getAllDocs from '@salesforce/apex/GoogleDocTemplateEditorController.getAllDocs'
 import getTemplate from '@salesforce/apex/GoogleDocTemplateEditorController.getTemplate'
 import getUsernameAndEmail from '@salesforce/apex/GoogleDocTemplateEditorController.getUsernameAndEmail'
-
+import new_template_bg from '@salesforce/resourceUrl/new_template_bg';
 
 
 export default class GoogleDocTemplateEditor extends LightningElement {
@@ -17,6 +17,8 @@ export default class GoogleDocTemplateEditor extends LightningElement {
     @track allTemplates
     @track serachString = ""
     @track profile
+    templateBg = new_template_bg
+    
 
    
     
@@ -47,6 +49,10 @@ export default class GoogleDocTemplateEditor extends LightningElement {
             console.log('Error ==> ',error);
         })
 
+    }
+
+    renderedCallback() {
+        this.template.host.style.setProperty('--background-image-url',`url(${this.templateBg})`);
     }
     closePopup(){
         this.showPopup = false
